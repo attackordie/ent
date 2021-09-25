@@ -14,6 +14,16 @@ func (User) Annotations() []schema.Annotation {
 	}
 }
 ```
+Edit our imports to the following: 
+
+```
+import (
+	"entgo.io/contrib/entproto"
+	"entgo.io/ent"
+	"entgo.io/ent/schema"
+	"entgo.io/ent/schema/field"
+)
+```
 
 Next, we need to annotate each field and assign it a field number. Recall that when [defining a protobuf message type](https://developers.google.com/protocol-buffers/docs/proto3#simple), each field must be assigned a unique number.  To do that, we add an `entproto.Field` annotation on each field. Update the `Fields` in `ent/schema/user.go`:
 
